@@ -3,13 +3,14 @@ import {Avatar, Box, Button, Container, IconButton, MenuItem, Toolbar, Tooltip, 
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import {Liquor} from '@mui/icons-material';
-
+import {signOutUser} from '../../redux/actions/actions';
+import {useDispatch} from "react-redux";
 const pages = ['Recervar mesa', 'Realizar pedido', 'Pedido', 'Factura'];
 const settings = ['Perfil', 'Cuenta', 'Cerrar sesion']
 
 
 const NavBar = () => {
-
+    const dispatch = useDispatch();
     const [openMenuNav, setOpenMenuNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const handleOpenNavMenu = (event) => {
@@ -26,7 +27,9 @@ const NavBar = () => {
         setAnchorElUser(null);
     };
 
-
+    const handleSignOutUser = () => {
+        dispatch(signOutUser())
+    }
     return (
         <Container maxWidth="xl">
             <Toolbar>
@@ -99,11 +102,14 @@ const NavBar = () => {
                         open={Boolean(anchorElUser)}
                         onClose={handleCloseUserMenu}
                     >
-                        {settings.map((setting) => (
-                            <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                <Typography textAlign="center">{setting}</Typography>
-                            </MenuItem>
-                        ))}
+                        {/*{settings.map((setting) => (*/}
+                        {/*    <MenuItem key={setting} onClick={handleCloseUserMenu}>*/}
+                        {/*        <Typography textAlign="center">Cerrar sesion</Typography>*/}
+                        {/*    </MenuItem>*/}
+                        {/*))}*/}
+                        <MenuItem  onClick={handleCloseUserMenu}>
+                            <Typography onClick={handleSignOutUser} textAlign="center">Cerrar sesion</Typography>
+                        </MenuItem>
                     </Menu>
                 </Box>
             </Toolbar>

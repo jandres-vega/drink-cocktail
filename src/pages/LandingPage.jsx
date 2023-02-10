@@ -2,11 +2,19 @@ import React from 'react';
 import imgLanding from '../assets/image 7.png';
 import logo from '../assets/image 4.png'
 import {Box} from "@mui/material";
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import {CustomerButton} from "../components/atoms/CustomerButton";
 import '../styles/LandingPage.css';
+import {useSelector} from "react-redux";
 
 const LandingPage = () => {
+
+    const currenUser = useSelector(state => state.userLogged );
+    if (currenUser){
+        return (
+            <Navigate to="/home" />
+        )
+    }
     return (
         <Box sx={{
             width: '100%',

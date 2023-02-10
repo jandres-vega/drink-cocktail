@@ -1,11 +1,12 @@
 import React from 'react';
 import {Header} from "../components/organisms/Header";
+import {Outlet} from "react-router-dom";
 
-const Layout = ({children}) => {
+const Layout = () => {
     return (
         <React.Fragment>
             <Header />
-            {children}
+            <Outlet />
         </React.Fragment>
     );
 };
