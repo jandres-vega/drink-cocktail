@@ -7,7 +7,7 @@ import {signOutUser} from '../../redux/actions/actions';
 import {useDispatch} from "react-redux";
 import {Link, NavLink} from 'react-router-dom';
 const pages = [
-    {page: 'Recervar mesa', to: 'book-a-table'},
+    {page: 'Reservar mesa', to: 'book-a-table'},
     {page: 'Realizar pedido', to: 'make-an-order'},
     {page: 'Pedidos', to: 'orders'},
     {page: 'Factura', to: 'bill-order'}
