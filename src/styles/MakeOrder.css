@@ -1,0 +1,9 @@
+.container-make-order {
+    overflow-y: scroll;
+    height: 480px;
+}
+.icon-checker-make {
+    /*position: absolute;*/
+    bottom: 50px;
+    width: 100%;
+}

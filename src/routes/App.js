@@ -8,6 +8,10 @@ import {Home} from "../pages/Home";
 import {ProtectRoutes} from "./ProtectRoutes";
 import {useDispatch} from "react-redux";
 import {currentUser} from '../redux/actions/actions';
+import {ReserveTable} from "../pages/ReserverTable";
+import {MakeOrder} from "../pages/MakeOrder";
+import {Orders} from "../pages/Orders";
+import {Checkout} from "../pages/Checkout";
 function App() {
 
     const dispatch = useDispatch();
@@ -23,7 +27,10 @@ function App() {
                 <Route exact path="/login-user" element={<LoginUser />} />
                 <Route element={<ProtectRoutes />}>
                     <Route path="/" element={<Layout />} >
-                        <Route path="home" element={<Home />} />
+                        <Route exact path="book-a-table" element={<ReserveTable />}/>
+                        <Route exact path="make-an-order" element={<MakeOrder />}/>
+                        <Route exact path="orders" element={<Orders />}/>
+                        <Route exact path="bill-order" element={<Checkout />}/>
                         <Route path="*" element={<h1>Not Found</h1>} />
                     </Route>
                 </Route>

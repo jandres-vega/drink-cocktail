@@ -12,7 +12,7 @@ const LandingPage = () => {
     const currenUser = useSelector(state => state.userLogged );
     if (currenUser){
         return (
-            <Navigate to="/home" />
+            <Navigate to="/book-a-table" />
         )
     }
     return (

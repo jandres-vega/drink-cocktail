@@ -23,7 +23,7 @@ const LoginUser = () => {
 
     const handleLoginWithEmail = () => {
         dispatch(loginWithEmail(user)).then( () => {
-            navigate('/home')
+            navigate('/book-a-table')
         }).catch((e) => {
             if (e.code === 'auth/user-not-found'){
                 setError('El usuario que ingresaste no esta registrado')

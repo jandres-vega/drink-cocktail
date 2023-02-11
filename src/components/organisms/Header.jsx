@@ -4,11 +4,9 @@ import {NavBar} from "../molecules/navBar";
 
 const Header = () => {
     return (
-        <header>
-            <AppBar position="static">
-                <NavBar />
-            </AppBar>
-        </header>
+        <AppBar position="static">
+            <NavBar />
+        </AppBar>
     );
 };
 

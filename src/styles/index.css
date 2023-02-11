@@ -1,4 +1,7 @@
 body {
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    min-height: calc(100vh);
 }
