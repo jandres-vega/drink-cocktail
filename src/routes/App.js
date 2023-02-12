@@ -4,7 +4,6 @@ import {LandingPage} from "../pages/LandingPage";
 import {CreateAccount} from "../pages/CreateAccount";
 import {LoginUser} from "../pages/LoginUser";
 import {Layout} from "../containers/Layout";
-import {Home} from "../pages/Home";
 import {ProtectRoutes} from "./ProtectRoutes";
 import {useDispatch} from "react-redux";
 import {currentUser} from '../redux/actions/actions';

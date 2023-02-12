@@ -11,7 +11,6 @@ const CustomerInput = ({textHolder, icon, typeText, width, name, getValueInput, 
         <FormControl  sx={{width: '100%',mb:1}}>
             <OutlinedInput
                 error={error}
-                // helperText="Incorrect entry."
                 sx={{background: '#efefefef', width: width}}
                 placeholder={textHolder}
                 name={name}

@@ -6,14 +6,13 @@ import {Liquor} from '@mui/icons-material';
 import {signOutUser} from '../../redux/actions/actions';
 import {useDispatch} from "react-redux";
 import {Link, NavLink} from 'react-router-dom';
+
 const pages = [
     {page: 'Reservar mesa', to: 'book-a-table'},
     {page: 'Realizar pedido', to: 'make-an-order'},
     {page: 'Pedidos', to: 'orders'},
     {page: 'Factura', to: 'bill-order'}
 ];
-
-console.log()
 
 const settings = ['Perfil', 'Cuenta', 'Cerrar sesion']
 
@@ -129,7 +128,6 @@ const NavBar = () => {
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                                     <Typography textAlign="center">{setting}</Typography>
                                 </MenuItem>
-
                         ))}
                     </Menu>
                 </Box>

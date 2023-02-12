@@ -8,7 +8,7 @@ import '../styles/MakeOrder.css';
 import checkPng from '../assets/check 1.png';
 import {Footer} from "../components/atoms/Footer";
 import {MaxMin} from "../components/molecules/MaxMin";
-
+import {CardInfo} from "../components/organisms/CardInfo";
 function MakeOrder() {
     return (
         <React.Fragment>
@@ -18,82 +18,22 @@ function MakeOrder() {
             <Box sx={{display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center'}}>
                 <Grid maxWidth="lg" container columns={{ xs: 4, sm: 10, md: 12 }} className="container-make-order" >
                     <Grid item xs={2} sm={4} md={4} sx={{pt:1}} >
-                        <Box sx={{border: 1, borderRadius: 2, color: '#00000024', height: 220}}>
-                            <Container sx={{ display: 'flex', justifyContent: 'center',p:2}}>
-                                <img style={{width: '70%', height: 150}} src={img1} alt="img-table" />
-                                <Box>
-                                    <Checkbox />
-                                </Box>
-                            </Container>
-                            <Box sx={{display: 'flex', justifyContent: 'center'}}>
-                                <MaxMin />
-                            </Box>
-                        </Box>
+                        <CardInfo Icon={<Checkbox />} image={img1} component={<MaxMin />}/>
                     </Grid>
                     <Grid item xs={2} sm={4} md={4} sx={{p:1}}>
-                        <Box sx={{border: 1, borderRadius: 2, color: '#00000024', height: 220}}>
-                            <Container sx={{display: 'flex', justifyContent: 'center',p:2}}>
-                                <img style={{width: '70%', height: 150}} src={img2} alt="img-table" />
-                                <Box>
-                                    <Checkbox />
-                                </Box>
-                            </Container>
-                            <Box sx={{display: 'flex', justifyContent: 'center'}}>
-                                <MaxMin />
-                            </Box>
-                        </Box>
+                        <CardInfo Icon={<Checkbox />} image={img2} component={<MaxMin />}/>
                     </Grid>
                     <Grid item xs={2} sm={4} md={4} sx={{p:1}}>
-                        <Box sx={{border: 1, borderRadius: 2, color: '#00000024', height: 220}}>
-                            <Container sx={{display: 'flex', justifyContent: 'center',p:2}}>
-                                <img style={{width: '70%', height: 150}} src={img3} alt="img-table" />
-                                <Box>
-                                    <Checkbox />
-                                </Box>
-                            </Container>
-                            <Box sx={{display: 'flex', justifyContent: 'center'}}>
-                                <MaxMin />
-                            </Box>
-                        </Box>
+                        <CardInfo Icon={<Checkbox />} image={img3} component={<MaxMin />}/>
                     </Grid>
                     <Grid item xs={2} sm={4} md={4} sx={{p:1}}>
-                        <Box sx={{border: 1, borderRadius: 2, color: '#00000024', height: 220}}>
-                            <Container sx={{display: 'flex', justifyContent: 'center',p:2}}>
-                                <img style={{width: '70%', height: 150}} src={img4} alt="img-table" />
-                                <Box>
-                                    <Checkbox />
-                                </Box>
-                            </Container>
-                            <Box sx={{display: 'flex', justifyContent: 'center'}}>
-                                <MaxMin />
-                            </Box>
-                        </Box>
+                        <CardInfo Icon={<Checkbox />} image={img4} component={<MaxMin />}/>
                     </Grid>
                     <Grid item xs={2} sm={4} md={4} sx={{p:1}}>
-                        <Box sx={{border: 1, borderRadius: 2, color: '#00000024', height: 220}}>
-                            <Container sx={{ display: 'flex', justifyContent: 'center',p:2}}>
-                                <img style={{width: '70%', height: 150}} src={img1} alt="img-table" />
-                                <Box>
-                                    <Checkbox />
-                                </Box>
-                            </Container>
-                            <Box sx={{display: 'flex', justifyContent: 'center'}}>
-                                <MaxMin />
-                            </Box>
-                        </Box>
+                        <CardInfo Icon={<Checkbox />} image={img1} component={<MaxMin />}/>
                     </Grid>
                     <Grid item xs={2} sm={4} md={4} sx={{p:1}}>
-                        <Box sx={{border: 1, borderRadius: 2, color: '#00000024', height: 220}}>
-                            <Container sx={{display: 'flex', justifyContent: 'center',p:2}}>
-                                <img style={{width: '70%', height: 150}} src={img2} alt="img-table" />
-                                <Box>
-                                    <Checkbox />
-                                </Box>
-                            </Container>
-                            <Box sx={{display: 'flex', justifyContent: 'center'}}>
-                                <MaxMin />
-                            </Box>
-                        </Box>
+                        <CardInfo Icon={<Checkbox />} image={img2} component={<MaxMin />}/>
                     </Grid>
                 </Grid>
             </Box>
