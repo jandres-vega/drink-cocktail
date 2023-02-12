@@ -5,7 +5,7 @@ import Menu from '@mui/material/Menu';
 import {Liquor} from '@mui/icons-material';
 import {signOutUser} from '../../redux/actions/actions';
 import {useDispatch} from "react-redux";
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const pages = [
     {page: 'Reservar mesa', to: 'book-a-table'},

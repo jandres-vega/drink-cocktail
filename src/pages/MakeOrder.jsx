@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Checkbox, Container, Grid, Typography} from "@mui/material";
+import {Box, Checkbox, Grid, Typography} from "@mui/material";
 import img1 from "../assets/spaguetis 2.png";
 import img2 from "../assets/ratatouille-3306 1.png";
 import img3 from "../assets/image 8.png";

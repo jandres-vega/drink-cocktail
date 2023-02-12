@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Checkbox, Container, Grid, Typography} from "@mui/material";
+import {Box, Checkbox, Grid, Typography} from "@mui/material";
 import imgTable from '../assets/mesa1 2.png';
 import {CustomerButton} from "../components/atoms/CustomerButton";
 import {CardInfo} from "../components/organisms/CardInfo";
