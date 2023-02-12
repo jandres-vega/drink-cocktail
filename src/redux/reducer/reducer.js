@@ -1,7 +1,8 @@
 import {types} from '../types';
 
 const initialState = {
-    userLogged: []
+    userLogged: [],
+    allDrinks: []
 }
 export function rootReducer(state= initialState, action) {
     switch (action.type) {
@@ -24,6 +25,11 @@ export function rootReducer(state= initialState, action) {
             return {
                 ...state,
                 userLogged: action.payload
+            }
+        case 'GET_ALL_DRINKS':
+            return {
+                ...state,
+                allDrinks: action.payload.drinks
             }
         default:
             return state

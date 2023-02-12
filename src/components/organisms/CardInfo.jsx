@@ -1,6 +1,6 @@
 import React from 'react';
-import {Box, Card, CardMedia, Container} from "@mui/material";
-const CardInfo = ({Icon, image, component}) => {
+import {Box, Card, CardMedia, Container, Typography} from "@mui/material";
+const CardInfo = ({Icon, image, component,nameDrink}) => {
     return (
         <Card sx={{ maxWidth: 300, minHeight: 100 }}>
             <Box sx={{display: 'flex', flexDirection: 'row-reverse'}}>
@@ -14,6 +14,7 @@ const CardInfo = ({Icon, image, component}) => {
                     alt="img-table"
                 />
             </Container>
+            <Typography sx={{textAlign: 'center'}}>{nameDrink}</Typography>
             <Box sx={{display: 'flex', justifyContent: 'center'}}>
                 {
                     component ? component: null
