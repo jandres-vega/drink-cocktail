@@ -5,7 +5,7 @@ import Menu from '@mui/material/Menu';
 import {Liquor} from '@mui/icons-material';
 import {signOutUser} from '../../redux/actions/actions';
 import {useDispatch} from "react-redux";
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const pages = [
     {page: 'Reservar mesa', to: 'book-a-table'},
@@ -13,10 +13,7 @@ const pages = [
     {page: 'Pedidos', to: 'orders'},
     {page: 'Factura', to: 'bill-order'}
 ];
-
 const settings = ['Perfil', 'Cuenta', 'Cerrar sesion']
-
-
 const NavBar = () => {
     const dispatch = useDispatch();
     const [openMenuNav, setOpenMenuNav] = React.useState(null);

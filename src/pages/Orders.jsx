@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Container, IconButton, List, ListItem, ListItemText, Typography} from "@mui/material";
+import {Box, Container, IconButton, List, Typography} from "@mui/material";
 import {CustomerButton} from "../components/atoms/CustomerButton";
 import EditIcon from '@mui/icons-material/Edit';
 
