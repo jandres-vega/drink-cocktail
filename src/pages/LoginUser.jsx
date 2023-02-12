@@ -5,13 +5,13 @@ import logo from "../assets/image 4.png";
 import {CustomerInput} from "../components/atoms/CustomerInput";
 import {Key, Email} from "@mui/icons-material";
 import {CustomerButton} from "../components/atoms/CustomerButton";
-import {Link, useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {loginWithEmail} from '../redux/actions/actions';
+import {Link, Navigate, useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {loginWithEmail} from '../redux/actions/actions.auth';
 import {AlertMessage} from "../components/molecules/AlertMessage";
 
 const LoginUser = () => {
-
+    const currenUser = useSelector(state => state.userLogged );
     const[user, setUser] = React.useState({
         email: '',
         password: ''
@@ -20,6 +20,7 @@ const LoginUser = () => {
     const [error, setError] = React.useState('')
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
 
     const handleLoginWithEmail = () => {
         dispatch(loginWithEmail(user)).then( () => {

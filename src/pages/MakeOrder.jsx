@@ -1,16 +1,17 @@
 import React from 'react';
-import {Box, Checkbox, Grid, Typography} from "@mui/material";
+import {Box, Grid, Typography} from "@mui/material";
 import checkPng from '../assets/check 1.png';
 import {Footer} from "../components/atoms/Footer";
 import {MaxMin} from "../components/molecules/MaxMin";
 import {CardInfo} from "../components/organisms/CardInfo";
 import {useDispatch, useSelector} from "react-redux";
-import {getAllDrinks} from '../redux/actions/actions';
+import {getAllDrinks} from '../redux/actions/actions.drinks';
 import '../styles/MakeOrder.css';
+import {drinkR} from "../redux/reducer/drinks.reducer";
 function MakeOrder() {
 
     const dispatch = useDispatch();
-    const getDrinks = useSelector(state => state.allDrinks);
+    const getDrinks = useSelector(state => state.drinkR.allDrinks);
 
     React.useEffect(() => {
         dispatch(getAllDrinks())
@@ -33,12 +34,11 @@ function MakeOrder() {
                 flexDirection: 'column',
                 alignItems: 'center'}}
             >
-                <Grid maxWidth="lg" container columns={{ xs: 4, sm: 10, md: 12 }} className="container-make-order" >
+                <Grid className="container-make-order" maxWidth="lg" container columns={{ xs: 4, sm: 10, md: 12 }} >
                     {
                         getDrinks ? getDrinks.map(cardDrink => (
                             <Grid item key={cardDrink.idDrink} xs={2} sm={4} md={4} sx={{pt:1}}>
                                 <CardInfo
-                                    Icon={<Checkbox />}
                                     image={cardDrink.strDrinkThumb}
                                     component={<MaxMin />}
                                     nameDrink={cardDrink.strDrink}

@@ -6,7 +6,7 @@ import {LoginUser} from "../pages/LoginUser";
 import {Layout} from "../containers/Layout";
 import {ProtectRoutes} from "./ProtectRoutes";
 import {useDispatch} from "react-redux";
-import {currentUser} from '../redux/actions/actions';
+import {currentUser} from '../redux/actions/actions.auth';
 import {ReserveTable} from "../pages/ReserverTable";
 import {MakeOrder} from "../pages/MakeOrder";
 import {Orders} from "../pages/Orders";

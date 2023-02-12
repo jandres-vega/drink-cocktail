@@ -8,7 +8,7 @@ import {Person, Mail, Key} from '@mui/icons-material';
 import '../styles/CreaateAccount.css';
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {registerWithEmail} from '../redux/actions/actions';
+import {registerWithEmail} from '../redux/actions/actions.auth';
 import {AlertMessage} from "../components/molecules/AlertMessage";
 
 const CreateAccount = () => {

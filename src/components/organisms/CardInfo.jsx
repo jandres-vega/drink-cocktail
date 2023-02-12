@@ -1,10 +1,20 @@
 import React from 'react';
 import {Box, Card, CardMedia, Container, Typography} from "@mui/material";
-const CardInfo = ({Icon, image, component,nameDrink}) => {
+import Checkbox from '@mui/material/Checkbox';
+
+const CardInfo = ({ image, component,nameDrink}) => {
+    const [checked, setChecked] = React.useState(false);
+    const handleChange = (event) => {
+        setChecked(event.target.checked);
+    };
     return (
         <Card sx={{ maxWidth: 300, minHeight: 100 }}>
             <Box sx={{display: 'flex', flexDirection: 'row-reverse'}}>
-                {Icon}
+                <Checkbox
+                    checked={checked}
+                    onChange={handleChange}
+                    inputProps={{ 'aria-label': 'controlled' }}
+                />
             </Box>
             <Container sx={{display: 'flex', justifyContent: 'center',p:2,  color: '#00000024'}}>
                 <CardMedia

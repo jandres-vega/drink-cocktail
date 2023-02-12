@@ -3,7 +3,7 @@ import {Avatar, Box, Button, Container, IconButton, MenuItem, Toolbar, Tooltip, 
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import {Liquor} from '@mui/icons-material';
-import {signOutUser} from '../../redux/actions/actions';
+import {signOutUser} from '../../redux/actions/actions.auth';
 import {useDispatch} from "react-redux";
 import {NavLink} from 'react-router-dom';
 
@@ -37,6 +37,7 @@ const NavBar = () => {
 
     const handleSignOutUser = () => {
         dispatch(signOutUser())
+
     }
     let activeStyle = {
         textDecoration: "underline",
