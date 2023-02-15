@@ -1,37 +1,31 @@
 import React from 'react';
-import {Box, Checkbox, Grid, Typography} from "@mui/material";
-import imgTable from '../assets/mesa1 2.png';
+import {Box, Grid, Typography} from "@mui/material";
 import {CustomerButton} from "../components/atoms/CustomerButton";
-import {CardInfo} from "../components/organisms/CardInfo";
+import {CardTable} from "../components/organisms/CardTable";
+import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 const ReserveTable = () => {
+    const allTables = useSelector(state => state.tablesR.tables);
+
     return (
         <React.Fragment>
             <Box sx={{display: 'flex', justifyContent: 'center', mt: 1}}>
-                <Typography variant="h3">Mesa 1</Typography>
+                <Typography variant="h3">Cocktails</Typography>
             </Box>
-            <Box sx={{display: 'flex', justifyContent: 'center', mt:5, flexDirection: 'column', alignItems: 'center'}}>
+            <Box sx={{display: 'flex', justifyContent: 'center', mt:-2, flexDirection: 'column', alignItems: 'center'}}>
                 <Grid maxWidth="lg" container columns={{ xs: 4, sm: 10, md: 12 }}  >
-                    <Grid item xs={2} sm={4} md={4} sx={{ p: 3}}>
-                        <CardInfo Icon={<Checkbox />} image={imgTable} />
-                    </Grid>
-                    <Grid item xs={2} sm={4} md={4} sx={{ p: 3}}>
-                        <CardInfo Icon={<Checkbox />} image={imgTable} />
-                    </Grid>
-                    <Grid item xs={2} sm={4} md={4} sx={{ p: 3}}>
-                        <CardInfo Icon={<Checkbox />} image={imgTable}/>
-                    </Grid>
-                    <Grid item xs={2} sm={4} md={4} sx={{p: 3}} >
-                        <CardInfo Icon={<Checkbox />} image={imgTable}/>
-                    </Grid>
-                    <Grid item xs={2} sm={4} md={4} sx={{p: 3}}>
-                        <CardInfo Icon={<Checkbox />} image={imgTable}/>
-                    </Grid>
-                    <Grid item xs={2} sm={4} md={4} sx={{p: 3}}>
-                        <CardInfo Icon={<Checkbox />} image={imgTable}/>
-                    </Grid>
+                    {
+                        allTables.map(table => (
+                            <Grid key={table.nameTable} item xs={2} sm={4} md={4} sx={{ p: 3}} >
+                                <CardTable image={table.image} nameDrink={table.nameTable} />
+                            </Grid>
+                        ))
+                    }
                 </Grid>
                 <Box>
-                    <CustomerButton textButton="Siguiente" color="secondary"/>
+                    <Link to="/make-an-order">
+                        <CustomerButton textButton="Siguiente" color="secondary"/>
+                    </Link>
                 </Box>
             </Box>
         </React.Fragment>

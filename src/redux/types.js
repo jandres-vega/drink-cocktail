@@ -4,11 +4,12 @@ export const typesAuth = {
     currentUser: 'CURRENT_USER',
     signOutUser: 'SIGN_OUT_USER'
 }
-
 export const typesDrinks = {
-    getAllDrinks: 'GET_ALL_DRINKS'
+    getAllDrinks: 'GET_ALL_DRINKS',
+    addOrderDrinks: 'ADD_DRINKS_ORDER',
+    deleteDrinkOrder: 'DELETE_ORDER'
 }
 
 export const typesTables = {
-
+    addTable: 'ADD_TABLE'
 }

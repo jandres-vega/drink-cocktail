@@ -1,11 +1,22 @@
 import React from 'react';
 import {Box, Card, CardMedia, Container, Typography} from "@mui/material";
-import Checkbox from '@mui/material/Checkbox';
-
-const CardInfo = ({ image, component,nameDrink}) => {
+import Checkbox from "@mui/material/Checkbox";
+import {addDrinksToOrder, deleteDrinkOdOrder} from '../../redux/actions/actions.drinks';
+import {useDispatch, useSelector} from "react-redux";
+import {MaxMin} from "../molecules/MaxMin";
+const CardDrink = ({ image, nameDrink,}) => {
+    let [cont, setCont] = React.useState(1);
     const [checked, setChecked] = React.useState(false);
+    const getOrders = useSelector(state => state.drinkR.ordersDrinks)
+    const dispatch = useDispatch();
     const handleChange = (event) => {
-        setChecked(event.target.checked);
+        if (!checked){
+            dispatch(addDrinksToOrder({image, nameDrink, cont}));
+            setChecked(event.target.checked);
+        }else {
+            dispatch(deleteDrinkOdOrder(nameDrink))
+            setChecked(event.target.checked);
+        }
     };
     return (
         <Card sx={{ maxWidth: 300, minHeight: 100 }}>
@@ -26,11 +37,10 @@ const CardInfo = ({ image, component,nameDrink}) => {
             </Container>
             <Typography sx={{textAlign: 'center'}}>{nameDrink}</Typography>
             <Box sx={{display: 'flex', justifyContent: 'center'}}>
-                {
-                    component ? component: null
-                }
+                <MaxMin cont={cont} setCont={setCont} />
             </Box>
         </Card>
     );
 };
-export {CardInfo};
+
+export {CardDrink};

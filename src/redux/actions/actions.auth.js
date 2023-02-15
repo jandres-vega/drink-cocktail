@@ -4,20 +4,33 @@ import {
     onAuthStateChanged,
     signOut
 } from 'firebase/auth';
+import {collection, doc, setDoc} from 'firebase/firestore';
+import {db} from '../../firebase/firebase.config';
 import {auth} from '../../firebase/firebase.config';
 import {typesAuth} from '../types';
-
-
-export const registerWithEmail = (user) => {
+export const registerWithEmail = (userForm) => {
     return async function (dispatch) {
-        let createUser = await createUserWithEmailAndPassword(auth, user.email, user.password);
+        const {userName, fullName, email, password} = userForm
+        const {user} = await createUserWithEmailAndPassword(auth, email, password);
+        await registerUserDb({
+            userName: userName,
+            fullName: fullName,
+            email: email
+        }, user.uid)
         return dispatch({
             type: typesAuth.loginWithEmail,
-            payload: createUser
+            payload: user
         })
     }
 }
-
+const registerUserDb = async (user, uid) => {
+    try {
+        const citiesRef = collection(db, "users");
+        await setDoc(doc(citiesRef, uid),user);
+    }catch (e) {
+        console.error(e)
+    }
+}
 export const loginWithEmail = (user) => {
     return async function(dispatch) {
         let userLogin = await signInWithEmailAndPassword(auth, user.email, user.password);

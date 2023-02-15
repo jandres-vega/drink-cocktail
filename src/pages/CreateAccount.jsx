@@ -28,10 +28,9 @@ const CreateAccount = () => {
             [name]: valueInput
         })
     }
-
     const handleRegisterWithEmail = () => {
         dispatch(registerWithEmail(value)).then(() => {
-            navigate('/home')
+            navigate('/book-a-table')
         }).catch( (e) => {
             if (e.code === 'auth/invalid-email'){
                 setError('Correo Incorrecto')
@@ -45,8 +44,6 @@ const CreateAccount = () => {
             },3000)
         })
     }
-
-
     return (
         <Box sx={{
             width: '100%',
