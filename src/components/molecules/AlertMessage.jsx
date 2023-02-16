@@ -13,7 +13,9 @@ const AlertMessage = ({error, warning, success}) => {
         )
     }else {
         return (
-            <Alert severity="success" >{success}</Alert>
+            <Alert severity="success" >{success}
+                <strong> check it out!</strong>
+            </Alert>
         )
     }
 

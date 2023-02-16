@@ -1,12 +1,10 @@
 import React from 'react';
 import {FormControl, FormHelperText, InputAdornment, OutlinedInput} from "@mui/material";
 
-const CustomerInput = ({textHolder, icon, typeText, width, name, getValueInput, error}) => {
-
+const CustomerInput = ({textHolder, icon, typeText, width, name, getValueInput, error, valueInput}) => {
     const handleOnChange = (e) => {
         getValueInput(e.target.value, e.target.name)
     }
-
     return (
         <FormControl  sx={{width: '100%',mb:1}}>
             <OutlinedInput

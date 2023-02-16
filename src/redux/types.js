@@ -13,3 +13,6 @@ export const typesDrinks = {
 export const typesTables = {
     addTable: 'ADD_TABLE'
 }
+export const typesInitialState = {
+    clearState: 'CLEAR_STATE'
+}

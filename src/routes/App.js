@@ -11,6 +11,7 @@ import {ReserveTable} from "../pages/ReserverTable";
 import {MakeOrder} from "../pages/MakeOrder";
 import {Orders} from "../pages/Orders";
 import {Checkout} from "../pages/Checkout";
+
 function App() {
 
     const dispatch = useDispatch();

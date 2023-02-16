@@ -1,10 +1,8 @@
 import React from 'react';
-import {Box, Card, CardMedia, Container, Modal, Paper, Typography, Button} from "@mui/material";
+import {Box, Card, CardMedia, Container,  Typography} from "@mui/material";
 import Checkbox from '@mui/material/Checkbox';
 import {saveOrderOfDrinks} from '../../redux/actions/actions.tables';
 import {useDispatch, useSelector} from "react-redux";
-import {get} from "axios";
-
 
 const CardTable = ({ image, component,nameDrink}) => {
 

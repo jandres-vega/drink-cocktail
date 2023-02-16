@@ -1,4 +1,4 @@
-import {typesTables} from '../types';
+import {typesTables, typesInitialState} from '../types';
 import {allTables} from '../../utils/objectTables';
 const initialState = {
     tables: [...allTables],
@@ -10,6 +10,11 @@ export function tablesR(state = initialState, action) {
             return {
                 ...state,
                 tabletSelect: action.payload
+            }
+        case typesInitialState.clearState:
+            return {
+                ...state,
+                tabletSelect: initialState.tabletSelect
             }
         default:
             return state

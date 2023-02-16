@@ -2,17 +2,16 @@ import React from 'react';
 import {Box, Grid, Typography} from "@mui/material";
 import checkPng from '../assets/check 1.png';
 import {Footer} from "../components/atoms/Footer";
-import {MaxMin} from "../components/molecules/MaxMin";
 import {CardDrink} from "../components/organisms/CardDrink";
 import {useDispatch, useSelector} from "react-redux";
 import {getAllDrinks} from '../redux/actions/actions.drinks';
 import '../styles/MakeOrder.css';
-import {drinkR} from "../redux/reducer/drinks.reducer";
-import {tablesR} from "../redux/reducer/tables.reducer";
+import {priceAleatorio} from '../utils/priceRamdon'
 function MakeOrder() {
     const dispatch = useDispatch();
     const getDrinks = useSelector(state => state.drinkR.allDrinks);
     const getTables = useSelector(state => state.tablesR.tabletSelect);
+
 
     React.useEffect(() => {
         dispatch(getAllDrinks())
@@ -46,6 +45,7 @@ function MakeOrder() {
                                             <CardDrink
                                                 image={cardDrink.strDrinkThumb}
                                                 nameDrink={cardDrink.strDrink}
+                                                price={priceAleatorio()}
                                             />
                                         </Grid>
                                     )): null

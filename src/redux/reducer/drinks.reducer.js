@@ -1,4 +1,4 @@
-import {typesDrinks} from '../types';
+import {typesDrinks, typesInitialState} from '../types';
 const initialState = {
     allDrinks: [],
     ordersDrinks: []
@@ -22,6 +22,11 @@ export function drinkR(state = initialState, action) {
             return {
                 ...state,
                 ordersDrinks: newArray
+            }
+        case typesInitialState.clearState:
+            return {
+                ...state,
+                ordersDrinks: initialState.ordersDrinks
             }
         default:
             return state
