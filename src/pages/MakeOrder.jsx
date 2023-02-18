@@ -7,14 +7,19 @@ import {useDispatch, useSelector} from "react-redux";
 import {getAllDrinks} from '../redux/actions/actions.drinks';
 import '../styles/MakeOrder.css';
 import {priceAleatorio} from '../utils/priceRamdon'
+import {Loading} from "../components/atoms/Loading";
 function MakeOrder() {
     const dispatch = useDispatch();
+    const [loading, setLoading] = React.useState(false);
     const getDrinks = useSelector(state => state.drinkR.allDrinks);
     const getTables = useSelector(state => state.tablesR.tabletSelect);
 
 
     React.useEffect(() => {
-        dispatch(getAllDrinks())
+        dispatch(getAllDrinks()).then(() => {
+            setLoading(false)
+        })
+        setLoading(true)
     },[dispatch])
 
     return (
@@ -38,6 +43,7 @@ function MakeOrder() {
                             flexDirection: 'column',
                             alignItems: 'center'}}
                         >
+                            {loading && <Loading />}
                             <Grid className="container-make-order" maxWidth="lg" container columns={{ xs: 4, sm: 10, md: 12 }} >
                                 {
                                     getDrinks ? getDrinks.map(cardDrink => (

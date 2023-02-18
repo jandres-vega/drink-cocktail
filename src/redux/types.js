@@ -11,7 +11,8 @@ export const typesDrinks = {
 }
 
 export const typesTables = {
-    addTable: 'ADD_TABLE'
+    addTable: 'ADD_TABLE',
+    getAllTables: 'GET_ALL_TABLES'
 }
 export const typesInitialState = {
     clearState: 'CLEAR_STATE'

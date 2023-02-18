@@ -1,7 +1,8 @@
 import {typesTables, typesInitialState} from '../types';
-import {allTables} from '../../utils/objectTables';
+//import {allTables} from '../../utils/objectTables';
 const initialState = {
-    tables: [...allTables],
+    //tables: [...allTables],
+    tables: [],
     tabletSelect: []
 }
 export function tablesR(state = initialState, action) {
@@ -10,6 +11,11 @@ export function tablesR(state = initialState, action) {
             return {
                 ...state,
                 tabletSelect: action.payload
+            }
+        case typesTables.getAllTables:
+            return {
+                ...state,
+                tables: action.payload
             }
         case typesInitialState.clearState:
             return {

@@ -3,7 +3,6 @@ import {Box, Card, CardMedia, Container,  Typography} from "@mui/material";
 import Checkbox from '@mui/material/Checkbox';
 import {saveOrderOfDrinks} from '../../redux/actions/actions.tables';
 import {useDispatch, useSelector} from "react-redux";
-
 const CardTable = ({ image, component,nameDrink}) => {
 
     const getSelectTable = useSelector(state => state.tablesR.tabletSelect.length === 0 ?
