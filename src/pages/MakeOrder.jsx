@@ -1,6 +1,5 @@
 import React from 'react';
-import {Checkbox, Grid, Typography, Box} from "@mui/material";
-import img4 from "../assets/image 9.png";
+import {Grid, Typography, Box} from "@mui/material";
 import checkPng from '../assets/check 1.png';
 import {Footer} from "../components/atoms/Footer";
 import {CardDrink} from "../components/organisms/CardDrink";
