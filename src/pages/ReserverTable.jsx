@@ -9,17 +9,19 @@ import {Loading} from "../components/atoms/Loading";
 const ReserveTable = () => {
     const dispatch = useDispatch();
     const allTables = useSelector(state => state.tablesR.tables);
-    const [loading, setLoanding] = React.useState(false);
+    const [loading, setLoading] = React.useState(false);
+
     React.useEffect(() => {
         try {
             dispatch(getAllTables()).then(() => {
-                setLoanding(false)
+                setLoading(false);
             })
-            setLoanding(true)
+            setLoading(true);
         }catch (e) {
             console.error(e)
         }
     },[dispatch])
+
     return (
         <React.Fragment>
             <Box sx={{display: 'flex', justifyContent: 'center', mt: 1}}>
@@ -31,7 +33,7 @@ const ReserveTable = () => {
                     {
                         allTables.map(table => (
                             <Grid key={table.table} item xs={2} sm={4} md={4} sx={{ p: 3}} >
-                                <CardTable image={table.image} nameDrink={table.table} />
+                                <CardTable image={table.image} nameTable={table.table} id={table.id} reserved={table.reserved} />
                             </Grid>
                         ))
                     }

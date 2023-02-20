@@ -68,7 +68,7 @@ function Checkout() {
     return (
         <React.Fragment>
             <Box sx={{display: 'flex', justifyContent: 'center', mt: 1}}>
-                <Typography variant="h3">Mesa 1</Typography>
+                <Typography variant="h3">Checkout</Typography>
             </Box>
             <List>
                 <Container maxWidth="md">

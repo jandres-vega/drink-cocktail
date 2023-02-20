@@ -13,7 +13,7 @@ function Orders() {
             {tables.length === 0 ? <h1>No tiene ningun Producto agregado</h1>:
                 <>
                     <Box sx={{display: 'flex', justifyContent: 'center', mt: 1}}>
-                        <Typography variant="h3">{tables[0].id}</Typography>
+                        <Typography variant="h3">{tables[0].nameTable}</Typography>
                     </Box>
                     <Container maxWidth="md" sx={{mt:3}}>
                         <Box sx={{display: 'flex', justifyContent: 'space-between'}}>

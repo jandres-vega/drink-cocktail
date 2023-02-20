@@ -83,7 +83,7 @@ const NavBar = () => {
                         {pages.map((item) => (
                             <MenuItem key={item.page} onClick={handleCloseNavMenu}>
                                 <NavLink to={item.to} style={({isActive}) => isActive ? activeStyle : desactiveStyle}>
-                                    <Typography textAlign="center">{item.page}</Typography>
+                                    <Button textAlign="center">{item.page}</Button>
                                 </NavLink>
                             </MenuItem>
                         ))}
