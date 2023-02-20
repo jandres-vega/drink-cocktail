@@ -5,9 +5,9 @@ import EditIcon from '@mui/icons-material/Edit';
 import { useSelector} from "react-redux";
 import {Link} from 'react-router-dom';
 function Orders() {
-
     const orderDrinks = useSelector(state => state.drinkR.ordersDrinks);
     const tables = useSelector(state => state.tablesR.tabletSelect);
+
     return (
         <React.Fragment>
             {tables.length === 0 ? <h1>No tiene ningun Producto agregado</h1>:

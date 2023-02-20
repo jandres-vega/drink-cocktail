@@ -1,6 +1,5 @@
 import React from 'react';
 import {Alert} from "@mui/material";
-
 const AlertMessage = ({error, warning, success}) => {
 
     if (error){

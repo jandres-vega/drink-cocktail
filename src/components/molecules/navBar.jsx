@@ -6,6 +6,7 @@ import {Liquor} from '@mui/icons-material';
 import {signOutUser} from '../../redux/actions/actions.auth';
 import {useDispatch} from "react-redux";
 import {NavLink} from 'react-router-dom';
+<<<<<<< HEAD
 
 const pages = [
     {page: 'Reservar mesa', to: 'book-a-table'},
@@ -14,6 +15,9 @@ const pages = [
     {page: 'Factura', to: 'bill-order'}
 ];
 const settings = ['Perfil', 'Cuenta', 'Cerrar sesion']
+=======
+import {pages, settings} from '../../utils/arrays.pages';
+>>>>>>> mirrorMain
 const NavBar = () => {
     const dispatch = useDispatch();
     const [openMenuNav, setOpenMenuNav] = React.useState(null);
