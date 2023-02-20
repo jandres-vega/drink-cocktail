@@ -1,10 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
-import {Box, Checkbox, Grid, Typography} from "@mui/material";
-import imgTable from '../assets/mesa1 2.png';
-=======
+
 import {Box, Grid, Typography} from "@mui/material";
->>>>>>> mirrorMain
 import {CustomerButton} from "../components/atoms/CustomerButton";
 import {CardTable} from "../components/organisms/CardTable";
 import {Link} from "react-router-dom";
