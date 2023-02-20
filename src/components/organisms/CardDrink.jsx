@@ -7,7 +7,6 @@ import {MaxMin} from "../molecules/MaxMin";
 const CardDrink = ({ image, nameDrink, price}) => {
     let [cont, setCont] = React.useState(1);
     const [checked, setChecked] = React.useState(false);
-    //const getOrders = useSelector(state => state.drinkR.ordersDrinks)
     const dispatch = useDispatch();
     const handleChange = (event) => {
         if (!checked){

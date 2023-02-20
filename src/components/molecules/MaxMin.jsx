@@ -4,9 +4,6 @@ import { Box, ButtonGroup,IconButton, Typography} from "@mui/material";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 const MaxMin = ({cont, setCont}) => {
-
-    // let [cont, setCont] = React.useState(1);
-
     const handleIncrement = () => {
         setCont(cont+=1);
     }

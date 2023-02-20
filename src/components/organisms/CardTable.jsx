@@ -2,15 +2,11 @@ import React from 'react';
 import {Box, Card, CardMedia, Container,  Typography} from "@mui/material";
 import Checkbox from '@mui/material/Checkbox';
 import {saveOrderOfDrinks, updateReservedTable} from '../../redux/actions/actions.tables';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 const CardTable = ({ image,nameTable,id, reserved}) => {
-
-    // const getSelectTable = useSelector(state => state.tablesR.tables === 0 ? false: state.tablesR.tabletSelect);
-    //const getSelectTable = useSelector(state => state.tablesR.tables === 0 ? false: state.tablesR.tabletSelect);
     const [checked, setChecked] = React.useState(reserved);
     const dispatch = useDispatch();
-
-    const handleChange = (event) => {
+    const handleChange = () => {
         setChecked(!checked);
         dispatch(updateReservedTable(id, checked))
         dispatch(saveOrderOfDrinks({ image,nameTable,id, reserved}))
@@ -20,10 +16,9 @@ const CardTable = ({ image,nameTable,id, reserved}) => {
         <Card sx={{ maxWidth: 300, minHeight: 100 }}>
             <Box  sx={{display: 'flex', flexDirection: 'row-reverse'}}>
                 <Checkbox
-                    //checked={!checked ? false :getSelectTable[0].nameTable === nameDrink}
                     checked={reserved? reserved: checked }
                     disabled={reserved}
-                    onChange={(e) => handleChange(e)}
+                    onChange={handleChange}
                     inputProps={{ 'aria-label': 'controlled' }}
                 />
             </Box>
@@ -36,11 +31,6 @@ const CardTable = ({ image,nameTable,id, reserved}) => {
                 />
             </Container>
             <Typography sx={{textAlign: 'center'}}>{nameTable}</Typography>
-            {/*<Box sx={{display: 'flex', justifyContent: 'center'}}>*/}
-            {/*    {*/}
-            {/*        component ? component: null*/}
-            {/*    }*/}
-            {/*</Box>*/}
         </Card>
     );
 };

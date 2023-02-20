@@ -28,7 +28,7 @@ const ReserveTable = () => {
                 <Typography variant="h3">Cocktails</Typography>
             </Box>
             <Box sx={{display: 'flex', justifyContent: 'center', mt:-2, flexDirection: 'column', alignItems: 'center'}}>
-                {loading && <Loading />}
+                {(loading && allTables.length === 0) && <Loading />}
                 <Grid maxWidth="lg" container columns={{ xs: 4, sm: 10, md: 12 }}  >
                     {
                         allTables.map(table => (
