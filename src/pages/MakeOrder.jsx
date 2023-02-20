@@ -1,19 +1,14 @@
 import React from 'react';
-import {Box, Checkbox, Grid, Typography} from "@mui/material";
-import img1 from "../assets/spaguetis 2.png";
-import img2 from "../assets/ratatouille-3306 1.png";
-import img3 from "../assets/image 8.png";
+import {Checkbox, Grid, Typography} from "@mui/material";
 import img4 from "../assets/image 9.png";
-import '../styles/MakeOrder.css';
-import {Box, Grid, Typography} from "@mui/material";
 import checkPng from '../assets/check 1.png';
 import {Footer} from "../components/atoms/Footer";
 import {CardDrink} from "../components/organisms/CardDrink";
 import {useDispatch, useSelector} from "react-redux";
 import {getAllDrinks} from '../redux/actions/actions.drinks';
-import '../styles/MakeOrder.css';
 import {priceAleatorio} from '../utils/priceRamdon'
 import {Loading} from "../components/atoms/Loading";
+import '../styles/MakeOrder.css';
 function MakeOrder() {
     const dispatch = useDispatch();
     const [loading, setLoading] = React.useState(false);
