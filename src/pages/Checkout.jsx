@@ -50,7 +50,6 @@ function Checkout() {
                 },4000)
             }
         })
-
     const handleSumTotal = () => {
         const total = (acc, item) => {
             return acc + (item.price * item.cont)
