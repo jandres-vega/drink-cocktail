@@ -7,11 +7,10 @@ import {Key, Email} from "@mui/icons-material";
 import {CustomerButton} from "../components/atoms/CustomerButton";
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {loginWithEmail} from '../redux/actions/actions';
+import {loginWithEmail} from '../redux/actions/actions.auth';
 import {AlertMessage} from "../components/molecules/AlertMessage";
 
 const LoginUser = () => {
-
     const[user, setUser] = React.useState({
         email: '',
         password: ''
@@ -20,6 +19,7 @@ const LoginUser = () => {
     const [error, setError] = React.useState('')
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
 
     const handleLoginWithEmail = () => {
         dispatch(loginWithEmail(user)).then( () => {

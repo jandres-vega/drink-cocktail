@@ -6,10 +6,11 @@ import {Link, Navigate} from 'react-router-dom';
 import {CustomerButton} from "../components/atoms/CustomerButton";
 import '../styles/LandingPage.css';
 import {useSelector} from "react-redux";
+import {authR} from "../redux/reducer/auth.reducer";
 
 const LandingPage = () => {
 
-    const currenUser = useSelector(state => state.userLogged );
+    const currenUser = useSelector(state => state.authR.userLogged);
     if (currenUser){
         return (
             <Navigate to="/book-a-table" />

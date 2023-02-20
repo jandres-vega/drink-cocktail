@@ -4,10 +4,10 @@ import {useSelector} from "react-redux";
 
 const ProtectRoutes = () => {
 
-    const currenUser = useSelector(state => state.userLogged);
+    const currenUser = useSelector(state => state.authR.userLogged);
     if (currenUser === null){
         return(
-            <Navigate to="/login-user" />
+            <Navigate to="/" />
         )
     }
     return (

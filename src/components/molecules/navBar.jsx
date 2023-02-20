@@ -3,7 +3,7 @@ import {Avatar, Box, Button, Container, IconButton, MenuItem, Toolbar, Tooltip, 
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import {Liquor} from '@mui/icons-material';
-import {signOutUser} from '../../redux/actions/actions';
+import {signOutUser} from '../../redux/actions/actions.auth';
 import {useDispatch} from "react-redux";
 import {NavLink} from 'react-router-dom';
 
@@ -34,6 +34,7 @@ const NavBar = () => {
 
     const handleSignOutUser = () => {
         dispatch(signOutUser())
+
     }
     let activeStyle = {
         textDecoration: "underline",
@@ -78,7 +79,9 @@ const NavBar = () => {
                     >
                         {pages.map((item) => (
                             <MenuItem key={item.page} onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">{item.page}</Typography>
+                                <NavLink to={item.to} style={({isActive}) => isActive ? activeStyle : desactiveStyle}>
+                                    <Button textAlign="center">{item.page}</Button>
+                                </NavLink>
                             </MenuItem>
                         ))}
                     </Menu>
